@@ -2,6 +2,8 @@ resource "aws_elb" "test" {
   name               = "test-terraform-elb"
   #availability_zones = ["us-west-2a", "us-west-2b"]
   subnets= ["${var.subnet_id}"]
+
+  security_groups= ["${var.security_groups}"]
   
 
   listener {
